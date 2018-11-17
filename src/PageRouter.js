@@ -5,7 +5,7 @@ import Cities from './components/cities';
 import Login from './components/logIn';
 import SignUp from './components/signUp';
 import Notfound from './components/notfound';
-import HomePage from './Home1';
+import HomePage from './Home2';
 import {
     Route,
     NavLink,
@@ -18,7 +18,9 @@ export default class PageRouter extends React.Component{
 
     return(
       <Router>
+       
         <div>
+           {/*}
            <ul>
              <li>
                <NavLink exact actvieclassname="active" to="/">
@@ -36,7 +38,7 @@ export default class PageRouter extends React.Component{
                </NavLink>
              </li>
            </ul>
-           <hr />
+    */}
            <Switch>
              <Route exact path="/" component={HomePage} />
              <Route path="/users" component={Users} />

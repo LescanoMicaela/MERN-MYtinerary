@@ -14,7 +14,7 @@ serviceWorker.unregister();
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
        <PageRouter />
       </div>
     );
