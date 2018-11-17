@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+.container img{
+    width: 100%;
+}
+.startBrowsing{
+    text-align: center;
+}
+.browserArrow img{
+    width: 30%;
+}
+
+.browserArrow, .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginSignup{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
