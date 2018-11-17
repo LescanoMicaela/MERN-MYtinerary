@@ -36,3 +36,10 @@
 .NavBar div{
     width: 12%;
 }
+
+.carouselTitle{
+    color: #394e56;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+}

@@ -26,7 +26,11 @@ class HomePage extends React.Component{
                         <img onClick={this.handleClick} src={BrowserArrow} alt="browser"/>
                     </div>
                 </div>
-                <Carousel />
+                <div className="popularCities">
+                    <h2 className="carouselTitle">Popular MYtineraries</h2>
+                    <Carousel />
+                </div>
+                
 
                 
             </div>
