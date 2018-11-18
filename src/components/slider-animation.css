@@ -126,8 +126,6 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.9)));
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
       bottom: 0;
       left: 0;
   }
@@ -259,4 +257,29 @@
     .slider-content .inner h1 {
       font-size: 32px;
     }
+  }
+
+  .inner{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  .cityDiv{
+    width: 50%;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .cityDiv h2{
+    background: linear-gradient(#0000006b, rgba(31, 15, 15, 0.38));
+    color: whitte;
+    width: 100%;
+    align-self: center;
+    font-family: monospace;
+    color: white;
   }
