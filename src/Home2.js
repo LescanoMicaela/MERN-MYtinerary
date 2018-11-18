@@ -3,7 +3,7 @@ import './Home1.css';
 import Logo from './assets/images/MYtineraryLogo.png';
 import Header from './components/Header';
 import BrowserArrow from './assets/images/circled-right-2.png';
-import Carousel from './components/Carousel2';
+import Footer from './components/Footer';
 
 
 //Design one, parent component would be App.js, child component Home.js, and would have 3 div elements//
@@ -26,13 +26,8 @@ class HomePage extends React.Component{
                         <img onClick={this.handleClick} src={BrowserArrow} alt="browser"/>
                     </div>
                 </div>
-                <div className="popularCities">
-                    <h2 className="carouselTitle">Popular MYtineraries</h2>
-                    <Carousel />
-                </div>
-                
+                <Footer />
 
-                
             </div>
         )
     }

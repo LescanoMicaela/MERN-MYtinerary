@@ -14,7 +14,6 @@ import Amsterdam from '../assets/images/Amsterdam.jpg';
 import Berlin from '../assets/images/Berlin.jpg';
 import LA from '../assets/images/LA.jpg';
 import Athens from '../assets/images/Athens.jpg';
-import CityDiv from './cityContainer';
 
 
 export default class Carousel extends React.Component{
@@ -129,4 +128,16 @@ export class SliderContent extends React.Component {
            
         )
     } 
+}
+
+export class CityDiv extends React.Component{
+    render(){
+        return (
+                <div className='cityDiv'
+                  style={{ background: `url('${this.props.background}') no-repeat center center` }}>
+                    <h2>{this.props.title}</h2>
+                </div>
+              
+        )
+    }
 }
