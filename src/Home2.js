@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home2.css';
+import './styles/Home2.css';
 import Logo from './assets/images/MYtineraryLogo.png';
 import Header from './components/Header';
 import BrowserArrow from './assets/images/circled-right-2.png';
