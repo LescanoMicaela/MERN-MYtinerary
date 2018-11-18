@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home2.css';
+import './Home3.css';
 import Logo from './assets/images/MYtineraryLogo.png';
 import Header from './components/Header';
 import BrowserArrow from './assets/images/circled-right-2.png';
@@ -22,10 +22,10 @@ class HomePage extends React.Component{
                 <div className="startBrowsing">
                     <p>Find your perfect trip, designed by insiders who know and love their cities.</p>
                     <div className="browserArrow">
+                        <h2>Start browsing</h2>
                         <img onClick={this.handleClick} src={BrowserArrow} alt="browser"/>
                     </div>
                 </div>
-                <Footer />
 
             </div>
         )

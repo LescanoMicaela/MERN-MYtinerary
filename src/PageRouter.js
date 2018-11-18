@@ -5,7 +5,7 @@ import Cities from './components/cities';
 import Login from './components/logIn';
 import SignUp from './components/signUp';
 import Notfound from './components/notfound';
-import HomePage from './Home2';
+import HomePage from './Home3';
 import {
     Route,
     NavLink,
