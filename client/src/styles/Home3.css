@@ -99,3 +99,16 @@
   .bm-menu-wrap{
       top:0;
   }
+
+  .homeIcon{
+    display: flex;
+    background-color: #3a4e56;
+    padding: 2%;
+    border-radius: 4%;
+    justify-content: center;
+  }
+
+  .homeIcon img{
+    width: 12%;
+    height:12%;
+  }

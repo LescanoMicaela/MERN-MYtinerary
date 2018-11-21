@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/Home3.css';
 import Logo from './assets/images/MYtineraryLogo.png';
-import Header from './components/Header';
 import BrowserArrow from './assets/images/circled-right-2.png';
 
 
@@ -12,8 +11,7 @@ class HomePage extends React.Component{
       }
     render(){
         return(
-            <div className="container">
-                <Header />
+            <div>
                 <div className="logo">
                 <img src={Logo} alt="logo" />
                 </div>
@@ -25,7 +23,6 @@ class HomePage extends React.Component{
                         <img onClick={this.handleClick} src={BrowserArrow} alt="browser"/>
                     </div>
                 </div>
-
             </div>
         )
     }

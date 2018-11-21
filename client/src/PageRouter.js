@@ -4,6 +4,9 @@ import Login from './components/logIn';
 import SignUp from './components/signUp';
 import Notfound from './components/notfound';
 import HomePage from './Home3';
+import Header from './components/Header';
+import Footer from './components/Footer2';
+import homeIcon from './assets/images/home.png';
 import {
     Route,
     BrowserRouter as Router,
@@ -15,8 +18,9 @@ export default class PageRouter extends React.Component{
 
     return(
       <Router>
-       
-        <div>
+        <div className='container'>
+       <Header />
+        
            {/*}
            <ul>
              <li>
@@ -36,13 +40,17 @@ export default class PageRouter extends React.Component{
              </li>
            </ul>
     */}
+
+  {/* Switch will pick only the first matching Route if two routes start with /cities, wont render both of them*/}
            <Switch>
              <Route exact path="/" component={HomePage} />
              <Route path="/cities" component={Cities} />
              <Route path="/login" component={Login} />
              <Route path="/signup" component={SignUp} />
+  {/* render if the URL matches no location */}
              <Route component={Notfound} />
            </Switch>
+           <Footer location={this.props.location} image={homeIcon} />
          </div>
        </Router>
      )
