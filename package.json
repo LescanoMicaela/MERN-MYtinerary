@@ -1,46 +1,21 @@
+
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "engines": {
-    "node": "8.11.2",
-    "npm": "6.4.1"
+  "name": "example-create-react-app-express",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "private": true,
   "dependencies": {
-    "bootstrap": "^4.1.1",
-    "jquery": "^3.3.1",
-    "react": "^16.6.1",
-    "react-animated-slider": "^1.1.4",
-    "react-burger-menu": "^2.5.4",
-    "react-dom": "^16.6.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "reactstrap": "^6.5.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
-  "scripts": {
-    "client": "npm start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start": "node server.js",
-    "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"
-  },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "npm-client-modules": "0.0.1"
+    "concurrently": "^4.0.1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "proxy": "http://localhost:5000/",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "proxy": "http://localhost:5000/"
 }
+
