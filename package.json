@@ -19,7 +19,7 @@
     "express": "^4.16.4"
   },
   "scripts": {
-    "client": "cd client && npm start",
+    "client": "npm start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
