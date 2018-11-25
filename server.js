@@ -1,26 +1,54 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
 const app = express();
+const MongoClient = require('mongodb').MongoClient;
+var ObjectID = require('mongodb').ObjectID; 
+const bodyParser= require('body-parser');
+
 const port = process.env.PORT || 5000;
+
+//tells the system that you want json to be used.
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-// API calls
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-});
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
-});
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-  // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// true : allows us to use complex algorithm for deep parsing that can deal with nested objects
+app.use(bodyParser.urlencoded({extended: true}));
+
+var ObjectID = require('mongodb').ObjectID; // we will use this later
+
+MongoClient.connect('mongodb://MicaelaLescano:MYtinerary321@ds115854.mlab.com:15854/mytinerary',{ useNewUrlParser: true }, (err, db) => {
+//save db in var dbase name of db inside ("") 
+var dbase = db.db("mytinerary");
+    if (err) return console.log(err)
+      app.listen(port, () => {
+        console.log(`Listening on port ${port}`)
+      })
+      
+      //post method to add cities to data base
+      app.post('/cities/add', (req, res, next) => {
+        
+        // body(keys and values) that'd be sent to the collection
+        var city = {
+          name: req.body.name,
+          country: req.body.country
+        };
+        // name of collection
+        dbase.collection("cities").insertOne(city, (err, result) => {
+          if(err) {
+            console.log(err);
+          }
+    
+          res.send('city added successfully');
+        });
+      });
+
+    //methods returns a list of all the elements in the collection
+    app.get('/cities', (req, res) => {
+      dbase.collection('cities').find().toArray( (err, results) => {
+        res.send(results)
+        });
+    });
+
   });
-}
-app.listen(port, () => console.log(`Listening on port ${port}`));
+
+
+app.get('/', (req,res)=>{
+  res.send('Its working');
+})
