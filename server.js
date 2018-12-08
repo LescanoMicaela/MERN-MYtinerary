@@ -3,7 +3,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID; 
 const bodyParser= require('body-parser');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 
 
@@ -24,7 +24,7 @@ var dbase = db.db("mytinerary");
       })
       
       //post method to add cities to data base
-      app.post('/api/cities/add', (req, res, next) => {
+      app.post('/cities/add', (req, res, next) => {
         
         // body(keys and values) that'd be sent to the collection
         var city = {
@@ -32,7 +32,7 @@ var dbase = db.db("mytinerary");
           country: req.body.country
         };
         // name of collection
-        dbase.collection("/api/cities").insertOne(city, (err, result) => {
+        dbase.collection("cities").insertOne(city, (err, result) => {
           if(err) {
             console.log(err);
           }
@@ -42,7 +42,7 @@ var dbase = db.db("mytinerary");
       });
 
     //methods returns a list of all the elements in the collection
-    app.get('/]api/cities', (req, res) => {
+    app.get('/cities', (req, res) => {
       dbase.collection('cities').find().toArray( (err, results) => {
         res.send(results)
         });
@@ -51,7 +51,7 @@ var dbase = db.db("mytinerary");
   });
 
 
-app.get('/api', (req,res)=>{
+app.get('/', (req,res)=>{
   res.send('Its working');
 })
 
