@@ -3,8 +3,10 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID; 
 const bodyParser= require('body-parser');
-
 const port = process.env.PORT || 5000;
+
+
+
 
 //tells the system that you want json to be used.
 app.use(bodyParser.json());
@@ -22,7 +24,7 @@ var dbase = db.db("mytinerary");
       })
       
       //post method to add cities to data base
-      app.post('/cities/add', (req, res, next) => {
+      app.post('/api/cities/add', (req, res, next) => {
         
         // body(keys and values) that'd be sent to the collection
         var city = {
@@ -30,7 +32,7 @@ var dbase = db.db("mytinerary");
           country: req.body.country
         };
         // name of collection
-        dbase.collection("cities").insertOne(city, (err, result) => {
+        dbase.collection("/api/cities").insertOne(city, (err, result) => {
           if(err) {
             console.log(err);
           }
@@ -40,7 +42,7 @@ var dbase = db.db("mytinerary");
       });
 
     //methods returns a list of all the elements in the collection
-    app.get('/cities', (req, res) => {
+    app.get('/]api/cities', (req, res) => {
       dbase.collection('cities').find().toArray( (err, results) => {
         res.send(results)
         });
@@ -49,6 +51,8 @@ var dbase = db.db("mytinerary");
   });
 
 
-app.get('/', (req,res)=>{
+app.get('/api', (req,res)=>{
   res.send('Its working');
 })
+
+
