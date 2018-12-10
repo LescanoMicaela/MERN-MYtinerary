@@ -24,28 +24,31 @@ export default class Cities extends React.Component{
       
       render() {
         return (
-          <div >
-             <h1>Cities page</h1> 
-             <List  cities={this.state.cities} />
+          <div className="cityList" >
+            <Filter />
+             <List class="citiesList" cities={this.state.cities} />
           </div>
         );
       }
     }
   
     export function List(props) {
-        const sidebar = (
-          <ul>
+        return  (
+          <div className={props.class}>
             {props.cities.map((city,index) =>
-              <li key={index}>
+              <p key={index}>
                 {city.name}
-              </li>
+              </p>
             )}
-          </ul>
-        );
-        return (
-          <div>
-            {sidebar}
           </div>
         );
       }
       
+      export function Filter(props){
+          return(
+              <div>
+                <p>Filter current cities</p> 
+                <input type="text"></input>
+              </div>
+          )
+      }

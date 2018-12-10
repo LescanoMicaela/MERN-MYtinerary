@@ -112,3 +112,15 @@
     width: 12%;
     height:12%;
   }
+
+  .citiesList p {
+    border: 1px solid black;
+    padding: 1%;
+    text-align: center;
+}
+
+.cityList{
+  height: 60%;
+  padding: 2% 0;
+  overflow: scroll;
+}
