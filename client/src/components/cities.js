@@ -1,8 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 
-
-export default class Cities extends React.Component{
+  class Cities extends React.Component{
     state = {
         cities: [],
       };
@@ -23,6 +23,8 @@ export default class Cities extends React.Component{
  
       
       render() {
+        console.log(this.props);
+        const{posts} = this.props;
         return (
           <div className="cityList" >
             <Filter />
@@ -52,3 +54,14 @@ export default class Cities extends React.Component{
               </div>
           )
       }
+
+      const mapStateToProps = (state)=>{
+        //returns an object trhough the store state
+        return{
+          post:state.posts
+        }
+      }
+
+      //we use connect to return a higher order component ( we connect the store with the component)
+      //we will pass the state intp the connect function
+      export default connect(mapStateToProps)(Cities);
